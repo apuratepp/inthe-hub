@@ -8,7 +8,16 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <%= render 'shared/sidebar' %>
+    </div>
+    <div class="span10">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
