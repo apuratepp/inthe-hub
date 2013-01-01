@@ -6,6 +6,7 @@
 			<th><%=t "Project" %></th>
 			<th><%=t "HEAD" %></th>
 			<th><%=t "Message" %></th>
+			<th><%=t "Author" %></th>
 			<th><%=t "Tree count" %></th>
 			<th><%=t "Time" %></th>
 			<th><%=t "Time distance" %></th>
@@ -18,6 +19,7 @@
 			<td><%= link_to File.basename(repo.workdir), :action => 'repo', :path => repo.workdir %></td>
 			<td><%= repo.head.name %></td>
 			<td><%= truncate(repo.lookup(repo.head.target).message, :length => 50) %></td>
+			<td><%= repo.lookup(repo.head.target).author[:name] %></td>
 			<td><%= repo.lookup(repo.head.target).tree.count %></td>
 			<td><%= Time.at(repo.lookup(repo.head.target).time) %></td>
 			<td><%= time_ago_in_words Time.at(repo.lookup(repo.head.target).time) %></td>
