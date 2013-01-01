@@ -18,7 +18,7 @@
 			<td style="text-align: right;"><span class="muted"><%= File.dirname(repo.workdir) %></span></td>
 			<td><%= link_to File.basename(repo.workdir), :action => 'repo', :path => repo.workdir %></td>
 			<td><%= repo.head.name %></td>
-			<td><%= truncate(repo.lookup(repo.head.target).message, :length => 50) %></td>
+			<td><%= truncate(repo.lookup(repo.head.target).message, :length => 40) %></td>
 			<td><%= repo.lookup(repo.head.target).author[:name] %></td>
 			<td><%= repo.lookup(repo.head.target).tree.count %></td>
 			<td><%= Time.at(repo.lookup(repo.head.target).time) %></td>
