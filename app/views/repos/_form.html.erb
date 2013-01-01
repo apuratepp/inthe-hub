@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :path %><br />
-    <%= f.text_field :path %>
+    <%= f.select :path, Repo.list %>
   </div>
   <div class="field">
     <%= f.label :name %><br />
