@@ -1,13 +1,14 @@
 # Repo directories to scan
 
 development:
-	repo_dirs:
-		- '/Users/apuratep/Developer/code/inthe/'
-		- '/Users/apuratep/Developer/code/equip9'
+  repo_dirs:
+    - '/Users/apuratep/Developer/code/inthe/'
+    - '/Users/apuratep/Developer/code/equip9'
 
 test:
-	repo_dirs:
+  repo_dirs:
+    - ''
 
 production:
-	repo_dirs:
-		- ''
+  repo_dirs:
+    - ''
