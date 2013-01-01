@@ -1,2 +1,21 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h3><%=t "List of Repositories" %></h3>
+<table class="table table-striped table-condensed table-bordered">
+	<thead>
+		<tr>
+			<th>Path</th>
+			<th>HEAD</th>
+			<th>Time</th>
+			<th>Message</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @repos.each do |repo| %>
+		<tr>
+			<td><%= repo.path %></td>
+			<td><%= repo.head.name %></td>
+			<td><%= Time.at repo.lookup(repo.head.target).time %></td>
+			<td><%= repo.lookup(repo.head.target).message %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
