@@ -11,7 +11,7 @@
 	<tbody>
 		<% @repos.each do |repo| %>
 		<tr>
-			<td><%= repo.path %></td>
+			<td><%= link_to repo.workdir, :action => 'repo', :path => repo.workdir %></td>
 			<td><%= repo.head.name %></td>
 			<td><%= Time.at(repo.lookup(repo.head.target).time) %></td>
 			<td><%= repo.lookup(repo.head.target).message %></td>

@@ -1,6 +1,5 @@
 <h3><%=t "InTheHub" %></h3>
 <ul class="nav nav-list well">
 	<li class="nav-header">InTheHub</li>
-	<li class="<%= 'active' if controller.action_name == "index" %>"><%= link_to t("Repos"), repos_path %></li>
-	<li class="<%= 'active' if controller.action_name == "new" %>"><%= link_to t("New Repo"), new_repo_path %></li>
+	<li class="<%= 'active' if controller.action_name == "index" %>"><%= link_to t("Repos"), :controller => 'home', :action => 'index' %></li>
 </ul>

@@ -1,0 +1,20 @@
+<h3><%= @repo.workdir %></h3>
+<table class="table table-condensed table-striped table-bordered">
+	<tr>
+		<th>Workdir</th>
+		<td><%= @repo.workdir %></td>
+	</tr>
+	<tr>
+		<th>HEAD</th>
+		<td><%= @repo.head.name %></td>
+	</tr>
+	<tr>
+		<th>Time</th>
+		<td><%= Time.at(@repo.lookup(@repo.head.target).time) %></td>
+	</tr>
+	<tr>
+		<th>Message</th>
+		<td><%= @repo.lookup(@repo.head.target).message %></td>
+	</tr>
+
+</table>

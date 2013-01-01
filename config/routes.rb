@@ -1,5 +1,7 @@
 IntheHub::Application.routes.draw do
+
   get "home/index"
+  get "home/repo"
 
   resources :repos
 
@@ -9,6 +11,8 @@ IntheHub::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+
+  match "home/repo?path=:path" => 'home#repo'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase

@@ -6,6 +6,9 @@ class Repo < ActiveRecord::Base
   def rug
     Rugged::Repository.new(self.path)
   end
+  def self.rug(path)
+    Rugged::Repository.new(path)
+  end
   def self.list
   	repos = []
 
