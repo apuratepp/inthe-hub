@@ -13,7 +13,7 @@
 		<tr>
 			<td><%= repo.path %></td>
 			<td><%= repo.head.name %></td>
-			<td><%= Time.at repo.lookup(repo.head.target).time %></td>
+			<td><%= Time.at(repo.lookup(repo.head.target).time) %></td>
 			<td><%= repo.lookup(repo.head.target).message %></td>
 		</tr>
 		<% end %>
