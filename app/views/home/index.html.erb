@@ -2,26 +2,26 @@
 <table class="table table-striped table-condensed table-bordered">
 	<thead>
 		<tr>
-			<th><%=t "Dirname" %></th>
 			<th><%=t "Project" %></th>
 			<th><%=t "HEAD" %></th>
 			<th><%=t "Message" %></th>
 			<th><%=t "Author" %></th>
-			<th><%=t "Tree count" %></th>
-			<th><%=t "Time" %></th>
 			<th><%=t "Time distance" %></th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @repos.each do |repo| %>
 		<tr>
-			<td style="text-align: right;"><span class="muted"><%= File.dirname(repo.workdir) %></span></td>
-			<td><%= link_to File.basename(repo.workdir), :action => 'repo', :path => repo.workdir %></td>
-			<td><%= repo.head.name %></td>
+			<td>
+				<span class="muted"><%= File.dirname(repo.workdir) %></span><br />
+				<%= link_to File.basename(repo.workdir), :action => 'repo', :path => repo.workdir %>
+			</td>
+			<td><%= repo.head.name.split("/").last %></td>
 			<td><%= truncate(repo.lookup(repo.head.target).message, :length => 40) %></td>
-			<td><%= repo.lookup(repo.head.target).author[:name] %></td>
-			<td><%= repo.lookup(repo.head.target).tree.count %></td>
-			<td><%= Time.at(repo.lookup(repo.head.target).time) %></td>
+			<td>
+				<%= Time.at(repo.lookup(repo.head.target).time) %><br />
+				<%= repo.lookup(repo.head.target).author[:name] %>
+			</td>
 			<td><%= time_ago_in_words Time.at(repo.lookup(repo.head.target).time) %></td>
 		</tr>
 		<% end %>
